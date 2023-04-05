@@ -1,4 +1,4 @@
-# Qualisys PAF – Theia Markerless Comaparison Example
+# Qualisys PAF – Theia Markerless Comparison Example
 
 ## Getting started
 
