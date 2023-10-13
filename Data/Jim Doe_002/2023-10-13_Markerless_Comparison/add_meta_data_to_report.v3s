@@ -1,0 +1,10 @@
+!====================================================
+!Make meta data available as Text_Items in V3D
+!====================================================
+
+Select_Active_File
+/FILE_NAME=GLOBAL
+! /QUERY=
+;
+
+ 

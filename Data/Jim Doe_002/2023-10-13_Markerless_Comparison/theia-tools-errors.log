@@ -1,0 +1,7 @@
+2022-04-20 13:23:20,130-ERROR-main-Exception occurred
+Traceback (most recent call last):
+  File "main.py", line 46, in <module>
+  File "theia_tools\script_runner.py", line 32, in run_script
+  File "theia_tools\script_runner.py", line 22, in process
+  File "theia_tools\format_data.py", line 176, in main
+NameError: name 'exit' is not defined

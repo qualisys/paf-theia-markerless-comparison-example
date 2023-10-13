@@ -1,0 +1,568 @@
+! Renaming E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\TheiaFormatData\Dynamic 1\pose_filt_0.c3d
+! To E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\TheiaFormatData\Dynamic 1\pose_subject.c3d
+! Renaming E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\TheiaFormatData\Dynamic 2\pose_filt_0.c3d
+! To E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\TheiaFormatData\Dynamic 2\pose_subject.c3d
+! Renaming E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\TheiaFormatData\Static 1\pose_filt_0.c3d
+! To E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\TheiaFormatData\Static 1\pose_subject.c3d
+ 
+ 
+
+!-----------------------------
+!First merge theia c3d and analog c3d
+!-----------------------------
+!=============================
+!Open files
+!=============================
+
+Manage_Theia3D_Merge
+/ROOT_FOLDER=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\ 
+! /ACTION=
+! /TAGS=ACTION
+/IMPORT_ANALOG_FILES=TRUE
+! /MERGE_THEIA3D_FILES=FALSE
+! /MERGE_THEIA3D_AND_OTHER_FILES=FALSE
+/THEIA3D_SESSION_FOLDER=TheiaFormatData
+/THEIA3D_FILE_MASK=*pose_subject.c3d
+! /THEIA3D_PREFIX=
+! /THEIA3D_SUBJECT_TAG=
+/OTHER3D_SESSION_FOLDER=2022-04-19_Markerless_Comparison 
+! /OTHER3D_FILE_MASK=
+! /OTHER3D_MODEL_MASK=
+! /OTHER3D_MODEL_TEMPLATE_MASK=
+! /OTHER3D_PREFIX=
+! /OTHER3D_SUBJECT_TAG=
+! /NUMBER_OF_SESSION_FILES_ALLOWED=
+/SAVE_DEFAULT_CMZ_FILES=FALSE
+! /OPEN_CMZ_LIBRARY=FALSE
+/INPUT_FOLDER_STRUCTURE=QTM
+! /VISUAL3D_PIPELINE=
+;
+
+ 
+		Assign_Tags_To_Files
+		/MOTION_FILE_NAMES=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\TheiaFormatData\Dynamic 1\Dynamic 1.c3d
+		! /QUERY=
+		/TAGS=Dynamic 
+		;
+
+		Assign_Tags_To_Files
+		/MOTION_FILE_NAMES=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\TheiaFormatData\Dynamic 1\Dynamic 1.c3d
+		! /QUERY=
+		/TAGS=tt 
+		;
+
+		Assign_Tags_To_Files
+		/MOTION_FILE_NAMES=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\TheiaFormatData\Dynamic 1\Dynamic 1.c3d
+		! /QUERY=
+		/TAGS=a 
+		;
+ 
+		Assign_Tags_To_Files
+		/MOTION_FILE_NAMES=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\TheiaFormatData\Dynamic 2\Dynamic 2.c3d
+		! /QUERY=
+		/TAGS=Dynamic 
+		;
+
+		Assign_Tags_To_Files
+		/MOTION_FILE_NAMES=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\TheiaFormatData\Dynamic 2\Dynamic 2.c3d
+		! /QUERY=
+		/TAGS=tt 
+		;
+
+		Assign_Tags_To_Files
+		/MOTION_FILE_NAMES=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\TheiaFormatData\Dynamic 2\Dynamic 2.c3d
+		! /QUERY=
+		/TAGS=b 
+		;
+ 
+		Assign_Tags_To_Files
+		/MOTION_FILE_NAMES=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\TheiaFormatData\Static 1\Static 1.c3d
+		! /QUERY=
+		/TAGS=Static 
+		;
+
+		Assign_Tags_To_Files
+		/MOTION_FILE_NAMES=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\TheiaFormatData\Static 1\Static 1.c3d
+		! /QUERY=
+		/TAGS=tt 
+		;
+
+		Assign_Tags_To_Files
+		/MOTION_FILE_NAMES=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\TheiaFormatData\Static 1\Static 1.c3d
+		! /QUERY=
+		/TAGS= 
+		;
+ 
+
+Recalc
+;
+
+! Use filtered data for link model based and force signals
+Set_Use_Processed_Analog
+/USE_PROCESSED=TRUE
+;
+
+Set_Use_Processed_Targets
+/USE_PROCESSED=TRUE
+! /RECALC=TRUE
+;
+
+!====================================================
+!Save frame rate so that it is available for other commands
+!====================================================
+
+Select_Active_File
+/FILE_NAME=Dynamic
+;
+
+Evaluate_Expression
+/EXPRESSION=PARAMETERS::POINT::RATE
+/RESULT_NAME=GLOBAL::FRAME_RATE
+! /RESULT_TYPE=DERIVED
+! /RESULT_FOLDER=PROCESSED
+;
+
+Select_Active_File
+/FILE_NAME=GLOBAL
+! /QUERY=
+;
+
+Set_Pipeline_Parameter_To_Data_Value
+/PARAMETER_NAME=FRAME_RATE
+/SIGNAL_TYPES=DERIVED
+/SIGNAL_NAMES=FRAME_RATE
+/SIGNAL_FOLDER=PROCESSED
+! /SIGNAL_COMPONENTS=ALL_COMPONENTS
+;
+
+!====================================================
+!Interpolate and Filter
+!====================================================
+! Maximum gap for interpolation is set to 1/10th of frame rate
+
+Evaluate_Expression
+/EXPRESSION=GLOBAL::DERIVED::PROCESSED::FRAME_RATE * 0.1
+/RESULT_NAME=GAP_WINDOW
+/RESULT_TYPE=DERIVED
+/RESULT_FOLDER=PROCESSED
+;
+
+Set_Pipeline_Parameter_To_Data_Value
+/PARAMETER_NAME=GAP
+/SIGNAL_TYPES=DERIVED
+/SIGNAL_NAMES=GAP_WINDOW
+/SIGNAL_FOLDER=PROCESSED
+! /SIGNAL_COMPONENTS=ALL_COMPONENTS
+;
+
+Select_Active_File
+/FILE_NAME=Dynamic
+;
+
+Interpolate
+/SIGNAL_TYPES=TARGET
+! /SIGNAL_NAMES=
+! /SIGNAL_FOLDER=ORIGINAL
+/MAXIMUM_GAP=::GAP
+! /NUM_FIT=3
+! /POLYNOMIAL_ORDER=3
+;
+
+Lowpass_Filter
+/SIGNAL_TYPES=TARGET
+! /SIGNAL_NAMES=
+/SIGNAL_FOLDER=PROCESSED
+! /RESULT_SUFFIX=
+! /RESULT_FOLDER=PROCESSED
+! /FILTER_CLASS=BUTTERWORTH
+/FREQUENCY_CUTOFF=20
+! /NUM_REFLECTED=6
+! /TOTAL_BUFFER_SIZE=6
+! /NUM_BIDIRECTIONAL_PASSES=1
+;
+
+Lowpass_Filter
+/SIGNAL_TYPES=ANALOG
+! /SIGNAL_NAMES=
+/SIGNAL_FOLDER=ORIGINAL
+! /RESULT_SUFFIX=
+/RESULT_FOLDER=PROCESSED
+! /FILTER_CLASS=BUTTERWORTH
+/FREQUENCY_CUTOFF=20
+! /NUM_REFLECTED=6
+! /TOTAL_BUFFER_SIZE=6
+! /NUM_BIDIRECTIONAL_PASSES=1
+;
+
+! Remove prefix 'Q_' if Skeleton solver Sports marker set is used.
+Remove_Prefix_From_Point_Labels
+/PREFIX=Q_
+! /INCLUDE_CAL_FILE=TRUE
+! /OVERWRITE_C3D_FILE=FALSE
+;
+
+! ============================
+! Model adaptations
+! ============================
+Set_Subject_Weight
+/CALIBRATION_FILE=*_static.c3d
+/WEIGHT=75.000000000 
+;
+
+Set_Subject_Height
+/CALIBRATION_FILE=*_static.c3d
+/HEIGHT=1.750000000 
+;
+
+! Add virtual lab segment oriented based on pelvis
+Append_Model_Template
+/CALIBRATION_FILE=*_static.c3d
+/MODEL_TEMPLATE=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Templates\append_model.mdh
+! /VIEW_BUILDMODEL_RESULTS=2
+;
+Assign_Model_File
+/CALIBRATION_FILE=*_static.c3d
+/MOTION_FILE_NAMES=ALL_FILES
+;
+
+Set_Segment_Auto_Assign_Force
+! /CALIBRATION_FILE=
+/SEGMENT_NAMES=RTO+LTO+RFT+LFT
+/USE_FOR_AUTO_ASSIGN=FALSE+FALSE+TRUE+TRUE
+;
+
+!Make LTO amd RTO segment kinematic only
+Set_Segment_Properties
+/CALIBRATION_FILE=*_static.c3d
+/SEGMENT_NAME=LTO
+/KINEMATIC_ONLY=TRUE
+! /MASS=
+! /CG_FROM_PROX_AXIAL=
+! /CG_FROM_PROX_ML=
+! /CG_FROM_PROX_AP=
+! /INERTIA_XX=
+! /INERTIA_YY=
+! /INERTIA_ZZ=
+! /AP_DIRECTION=
+! /AXIAL_DIRECTION=
+! /MODEL_FILE=
+! /MATERIAL_FILE=
+! /GRAPHICS_ROT_X=
+! /GRAPHICS_ROT_Y=
+! /GRAPHICS_ROT_Z=
+! /GRAPHICS_SCALE_X=
+! /GRAPHICS_SCALE_Y=
+! /GRAPHICS_SCALE_Z=
+! /GRAPHICS_TRANSLATE_X=
+! /GRAPHICS_TRANSLATE_Y=
+! /GRAPHICS_TRANSLATE_Z=
+;
+
+Set_Segment_Properties
+/CALIBRATION_FILE=*_static.c3d
+/SEGMENT_NAME=RTO
+/KINEMATIC_ONLY=TRUE
+! /MASS=
+! /CG_FROM_PROX_AXIAL=
+! /CG_FROM_PROX_ML=
+! /CG_FROM_PROX_AP=
+! /INERTIA_XX=
+! /INERTIA_YY=
+! /INERTIA_ZZ=
+! /AP_DIRECTION=
+! /AXIAL_DIRECTION=
+! /MODEL_FILE=
+! /MATERIAL_FILE=
+! /GRAPHICS_ROT_X=
+! /GRAPHICS_ROT_Y=
+! /GRAPHICS_ROT_Z=
+! /GRAPHICS_SCALE_X=
+! /GRAPHICS_SCALE_Y=
+! /GRAPHICS_SCALE_Z=
+! /GRAPHICS_TRANSLATE_X=
+! /GRAPHICS_TRANSLATE_Y=
+! /GRAPHICS_TRANSLATE_Z=
+;
+
+Set_Segment_Properties
+/CALIBRATION_FILE=*_static.c3d
+/SEGMENT_NAME=RTX
+/KINEMATIC_ONLY=TRUE
+! /MASS=
+! /CG_FROM_PROX_AXIAL=
+! /CG_FROM_PROX_ML=
+! /CG_FROM_PROX_AP=
+! /INERTIA_XX=
+! /INERTIA_YY=
+! /INERTIA_ZZ=
+! /AP_DIRECTION=
+! /AXIAL_DIRECTION=
+/MODEL_FILE=none
+! /MATERIAL_FILE=
+! /GRAPHICS_ROT_X=
+! /GRAPHICS_ROT_Y=
+! /GRAPHICS_ROT_Z=
+! /GRAPHICS_SCALE_X=
+! /GRAPHICS_SCALE_Y=
+! /GRAPHICS_SCALE_Z=
+! /GRAPHICS_TRANSLATE_X=
+! /GRAPHICS_TRANSLATE_Y=
+! /GRAPHICS_TRANSLATE_Z=
+;
+ 
+
+! Remove markerless static trial  to clean up the workspace
+File_Close
+/FILE_NAME=Static*.c3d
+! /QUERY=
+;
+
+! Assign tag to markerless trials
+Assign_Tags_To_Files
+/MOTION_FILE_NAMES=ALL_FILES
+! /QUERY=
+/TAGS=markerless
+;
+
+!-----------------------------
+! Now apply model on marker-based trials
+!-----------------------------
+ 
+		File_Open
+		/FILE_NAME=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\Dynamic 1.c3d 
+		/SUFFIX=_MB
+		! /SET_PROMPT=File_Open
+		! /FILTER=
+		! /ON_FILE_NOT_FOUND=PROMPT
+		;
+
+		Assign_Tags_To_Files
+		/MOTION_FILE_NAMES=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\Dynamic 1.c3d 
+		! /QUERY=
+		/TAGS=Dynamic 
+		;
+
+		Assign_Tags_To_Files
+		/MOTION_FILE_NAMES=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\Dynamic 1.c3d 
+		! /QUERY=
+		/TAGS=tt 
+		;
+
+		Assign_Tags_To_Files
+		/MOTION_FILE_NAMES=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\Dynamic 1.c3d 
+		! /QUERY=
+		/TAGS=a 
+		;
+
+ 
+		File_Open
+		/FILE_NAME=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\Dynamic 2.c3d 
+		/SUFFIX=_MB
+		! /SET_PROMPT=File_Open
+		! /FILTER=
+		! /ON_FILE_NOT_FOUND=PROMPT
+		;
+
+		Assign_Tags_To_Files
+		/MOTION_FILE_NAMES=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\Dynamic 2.c3d 
+		! /QUERY=
+		/TAGS=Dynamic 
+		;
+
+		Assign_Tags_To_Files
+		/MOTION_FILE_NAMES=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\Dynamic 2.c3d 
+		! /QUERY=
+		/TAGS=tt 
+		;
+
+		Assign_Tags_To_Files
+		/MOTION_FILE_NAMES=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\Dynamic 2.c3d 
+		! /QUERY=
+		/TAGS=b 
+		;
+
+ 
+
+! Assign tag to marker-based trials
+Assign_Tags_To_Files
+/MOTION_FILE_NAMES=*.c3d
+/QUERY=NOT(markerless)
+/TAGS=marker-based
+;
+
+! Apply model
+Create_Hybrid_Model
+/CALIBRATION_FILE=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\Static 1.c3d 
+! /SUFFIX=_
+! /RANGE=ALL_FRAMES
+! /SET_PROMPT=Open standing file
+;
+
+Assign_Model_File
+/CALIBRATION_FILE=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\Static 1.c3d/MOTION_FILE_NAMES=marker-based
+! /REMOVE_EXISTING_ASSIGNMENTS=FALSE
+;
+
+! Demo data uses sports marker set. Change .mdh file is other marker set is used
+Apply_Model_Template
+/CALIBRATION_FILE=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\Static 1.c3d/MODEL_TEMPLATE=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Templates\Full_body_Sports_Marker_Set.mdh
+! /SET_PROMPT=Open model file
+! /VIEW_BUILDMODEL_RESULTS=2
+! /MISSING_TARGET_MESSAGE=FALSE
+;
+
+Set_Subject_Weight
+/CALIBRATION_FILE=*Static*.c3d
+/WEIGHT=75.000000000 
+;
+
+Set_Subject_Height
+/CALIBRATION_FILE=*Static*.c3d
+/HEIGHT=1.750000000 
+;
+
+!====================================================
+!Make meta data available as Text_Items in V3D
+!====================================================
+
+Select_Active_File
+/FILE_NAME=GLOBAL
+! /QUERY=
+;
+
+ 
+	Set_Text_Item
+	/SIGNAL_NAME=Name
+	/SIGNAL_FOLDER=META
+	/SIGNAL_DATA_VALUE=Jim Doe 
+	;
+ 
+	Set_Text_Item
+	/SIGNAL_NAME=ID
+	/SIGNAL_FOLDER=META
+	/SIGNAL_DATA_VALUE=002 
+	;
+ 
+	Set_Text_Item
+	/SIGNAL_NAME=DOB
+	/SIGNAL_FOLDER=META
+	/SIGNAL_DATA_VALUE=2022-04-19 
+	;
+ 
+	Set_Text_Item
+	/SIGNAL_NAME=Weight
+	/SIGNAL_FOLDER=META
+	/SIGNAL_DATA_VALUE=75.0 kg 
+	;
+ 
+	Set_Text_Item
+	/SIGNAL_NAME=Creation_date
+	/SIGNAL_FOLDER=META
+	/SIGNAL_DATA_VALUE=2022-04-19 
+	;
+ 
+	Set_Text_Item
+	/SIGNAL_NAME=Creation_time
+	/SIGNAL_FOLDER=META
+	/SIGNAL_DATA_VALUE=12:17:34 
+	;
+ 
+!====================================================
+!Processing 
+!====================================================
+
+Select_Active_File
+/FILE_NAME=ALL_FILES
+! /QUERY=
+;
+
+Set_Default_Folders
+! /PIPELINE=
+/REPORT_TEMPLATE=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Templates\ 
+! /MODEL_TEMPLATE=
+! /MOTION_FILE=
+/DEFAULT_DATA=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\ 
+! /DEFAULT_MODEL_TEMPLATE=
+! /DEFAULT_REPORT_TEMPLATE=
+! /CMO_LIBRARY_PATH=
+;
+
+!===========================================
+!Define virtual lab orientation based on pelvis orientation
+!===========================================
+
+! Add TARGET Lab orientation (used to set orientation of Virtual lab)
+! ==================================
+
+! A unit vector is defined between the right and left hip landmarks, then rounded to yield 4 possible solutions ( +/- X-axis and +/- y-axis)
+! A target is created that contains that unit_vector at every frame of data.
+! The virtual_lab will be tracked by the new TARGET.
+
+! Note this algorithm will NOT work properly if pelvis rotates along vertical axis during dynamic trials
+! Note LHIP and RHIP landmarks must exist to aply this algorithm.
+
+! Create a unit vector between left and right hips
+Evaluate_Expression
+/EXPRESSION=UNIT_VECTOR(
+	(LANDMARK::ORIGINAL::RHIP::X - LANDMARK::ORIGINAL::LHIP::X), 
+	(LANDMARK::ORIGINAL::RHIP::Y - LANDMARK::ORIGINAL::LHIP::Y), 
+	(LANDMARK::ORIGINAL::RHIP::Z - LANDMARK::ORIGINAL::LHIP::Z)) 
+! /SIGNAL_TYPES= 
+! /SIGNAL_FOLDER=ORIGINAL 
+! /SIGNAL_NAMES= 
+/RESULT_TYPES=DERIVED 
+/RESULT_FOLDERS=VIRTUAL_LAB 
+/RESULT_NAME=HIP_VECTOR 
+! /APPLY_AS_SUFFIX_TO_SIGNAL_NAME=FALSE 
+; 
+
+! Compute the median value of the unit vector
+Metric_Median
+/RESULT_METRIC_FOLDER=VIRTUAL_LAB
+/RESULT_METRIC_NAME=_MED
+/APPLY_AS_SUFFIX_TO_SIGNAL_NAME=TRUE
+/SIGNAL_TYPES=DERIVED
+/SIGNAL_FOLDER=VIRTUAL_LAB
+/SIGNAL_NAMES=HIP_VECTOR
+/COMPONENT_SEQUENCE=ALL
+/EVENT_SEQUENCE=
+/EXCLUDE_EVENTS=
+/SEQUENCE_PERCENT_START=
+/SEQUENCE_PERCENT_END=
+/GENERATE_MEAN_AND_STDDEV=FALSE
+! /APPEND_TO_EXISTING_VALUES=FALSE
+;
+
+! Round the floats to an integer 
+Evaluate_Expression 
+/EXPRESSION=ROUND(METRIC::VIRTUAL_LAB::HIP_VECTOR_MED) 
+! /SIGNAL_TYPES= 
+! /SIGNAL_FOLDER=ORIGINAL 
+! /SIGNAL_NAMES= 
+/RESULT_TYPES=METRIC 
+/RESULT_FOLDERS=VIRTUAL_LAB 
+/RESULT_NAME=LAB_LATERAL 
+! /APPLY_AS_SUFFIX_TO_SIGNAL_NAME=FALSE 
+; 
+
+! Create a new TARGET that has the rounded unit vector at every frame. 
+Create_Target 
+/SIGNAL_NAMES=Lab orientation
+! /SIGNAL_DESCRIPTION= 
+/EXPRESSION=METRIC::VIRTUAL_LAB::LAB_LATERAL 
+; 
+
+! End of virtual lab definition 
+! =========================================
+ 
+
+
+Call_Script
+/SCRIPT_FILE_NAME=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Templates\processing_comparison.v3s 
+! /SCRIPT_PATH=
+;
+
+!Save comparison cmz
+File_Save_As
+/FILE_NAME=E:\Qualisys_repository\paf-theia-markerless-comparison-example.git\Data\Jim Doe_002\2022-04-19_Markerless_Comparison\Report_comparison.cmz 
+;
