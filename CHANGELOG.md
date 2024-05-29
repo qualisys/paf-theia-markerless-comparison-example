@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.1.8]
+Fix to provide compatibility with Visual3D 2024.05.3.
+
 ## [1.1.6]
 Fix to missing force data in markerless trials.
 
