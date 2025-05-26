@@ -49,7 +49,9 @@ The full documentation for PAF development is available here: [PAF Documentation
 ### PAF Examples
 
 Our official examples for various processing engines:
+
 - [AnyBody](https://github.com/qualisys/paf-anybody-example)
+- [Cleanse](https://github.com/qualisys/paf-cleanse-example)
 - [ENABLE](https://github.com/qualisys/paf-enable-markerless-example)
 - [Excel](https://github.com/qualisys/paf-excel-example)
 - [Matlab](https://github.com/qualisys/paf-matlab-example)
@@ -61,3 +63,4 @@ Our official examples for various processing engines:
 - [Visual3D](https://github.com/qualisys/paf-visual3d-example)
 
 _As of QTM version 2.17, the official Qualisys PAF examples can be used without any additional license. Note that some more advanced analysis types require a license for the "PAF Framework Developer kit" (Article number 150300)._
+
